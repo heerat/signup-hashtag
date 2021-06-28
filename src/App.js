@@ -5,8 +5,8 @@ import { Singup } from './app/components/signup/signup';
 
 function App() {
   return (
-  //  <Home></Home>
-  <Singup></Singup>
+   <Home></Home>
+  // <Singup></Singup>
   );
 }
 

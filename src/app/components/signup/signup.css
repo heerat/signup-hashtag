@@ -1,7 +1,29 @@
+.sign-container{
+    color: white;
+}
+.form-wrapper{
+    margin-top: 20px;
+}
+.title{
+    font-size: 20px;
+}
 .form-group{
     display: grid;
 }
 
 .box{
     border-radius: 10px;
+    border: solid green;
+    height: 30px;
+}
+.buttom-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.button{
+    width: 150px;
+    border-radius: 10px;
+    background-color: green;
+    height: 30px;
+    margin-top: 25px;
 }

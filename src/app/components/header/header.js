@@ -4,7 +4,6 @@ export const Header = () => {
     return( 
         <>
         <div className="header">
-            
             <div className="left">
             <img src="src/app/images/Fanconvo-header-logo.png" alt="logo" />
                 <span>A market place for conversation, mentorships and performances.</span>

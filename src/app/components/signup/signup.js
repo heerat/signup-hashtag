@@ -2,54 +2,72 @@ import React, { useState } from "react";
 import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "./signup.css";
+import axios from 'axios'
 
-export const Singup = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export const Singup = ({type}) => {
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [timezone, setTimeZone] = useState("");
+    const [password, setPassword] = useState("");
 
-  function validateForm() {
+  const validateForm = () => {
     return email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = async(event) => {
+    const saveFan = await axios.post("http://134.209.148.76:2000/api/v3/sign-up/"+`${type}` ,
+                    {
+                        first_name: fname,
+                        last_name: lname,
+                        username: username,
+                        email: email,
+                        password: timezone,
+                        timezone: password,
+                        captcha: true
+                    }
+  ).then(res=>res.data.results.token)
+  console.log(saveFan)
     event.preventDefault();
   }
 
   return (
-    <div className="Singup">
+    <div className="sign-container">
+       <span className="title"> Create your {type} account</span>
       <Form onSubmit={handleSubmit}>
-        <Form.Group  size="lg" controlId="firstname">
+        <div className="form-wrapper">
+        <Form.Group  size="sm" controlId="firstname">
           <Form.Label >First name * </Form.Label>
           <Form.Control
             className="box"
             autoFocus
-            value={email}
+            value={fname}
             placeholder= "first name"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setFname(e.target.value)}
           />
         </Form.Group>
-        <Form.Group  size="lg" controlId="lastname">
+        <Form.Group  size="sm" controlId="lastname">
           <Form.Label>Last name *</Form.Label>
           <Form.Control
            className="box"
             autoFocus
-            value={email}
+            value={lname}
             placeholder= "last name"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setLname(e.target.value)}
           />
         </Form.Group>
-        <Form.Group  size="lg" controlId="username">
+        <Form.Group  size="sm" controlId="username">
           <Form.Label>Username *</Form.Label>
           <Form.Control
            className="box"
             autoFocus
-            type="email"
-            value={email}
+            value={username}
             placeholder= "username"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </Form.Group>
-        <Form.Group  size="lg" controlId="email">
+        <Form.Group  size="sm" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
            className="box"
@@ -60,18 +78,17 @@ export const Singup = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group  size="lg" controlId="timezone">
+        <Form.Group  size="sm" controlId="timezone">
           <Form.Label>Timezone *</Form.Label>
           <Form.Control
            className="box"
             autoFocus
-            type="email"
-            value={email}
+            value={timezone}
             placeholder= "timezone"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setTimeZone(e.target.value)}
           />
         </Form.Group>
-        <Form.Group size="lg" controlId="password">
+        <Form.Group size="sm" controlId="password">
           <Form.Label>Password *</Form.Label>
           <Form.Control
            className="box"
@@ -81,9 +98,12 @@ export const Singup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-        Singup
+        </div>
+        <div className="buttom-wrapper">
+        <Button className="button" block size="sm" type="submit" disabled={!validateForm()}>
+        SIGN UP
         </Button>
+        </div>
       </Form>
     </div>
   );
