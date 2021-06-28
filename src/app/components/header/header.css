@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    background-color: black;
+    color: white;
+}
+.left{
+    display: grid;
+    width: 80%;
+}
+.right{
+    width: 20%;
+    margin-top: 10px;
+}
+.login{
+    margin-left: 15px;
+}
+.search-wrapper{
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
