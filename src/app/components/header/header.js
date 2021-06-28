@@ -1,6 +1,13 @@
 import './header.css'
 export const Header = () => {
 
+    const gotToSignup = (event) => {
+        console.log(event)
+    }
+    const gotToLogin = (event) => {
+        console.log(event)
+    }
+
     return( 
         <>
         <div className="header">
@@ -22,8 +29,8 @@ export const Header = () => {
                 </div>
             </div>
             <div className="right">
-                <span className="signup">Sign Up</span>
-                <span className="login">login</span>
+                <span className="signup" onClick={gotToSignup}>Sign Up</span>
+                <span className="login" onClick={gotToLogin}>login</span>
             </div>
         </div>
         </>
