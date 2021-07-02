@@ -12,9 +12,11 @@
 }
 
 .box{
-    border-radius: 10px;
+    border-radius: 30px;
     border: solid green;
     height: 30px;
+    background-color: #2b2b2d;
+    outline: unset;
 }
 .buttom-wrapper{
     display: flex;
@@ -22,8 +24,24 @@
 }
 .button{
     width: 150px;
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: green;
     height: 30px;
-    margin-top: 25px;
+    margin: 25px;
+}
+.check-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.green{
+    color: green;
+    margin-left: 4px;
+}
+.check-box{
+    margin-right: 4px; 
+}
+.label-wrapper{
+    display: flex;
+    justify-content: center;
 }

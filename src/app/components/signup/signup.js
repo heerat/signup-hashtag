@@ -99,10 +99,19 @@ export const Singup = ({type}) => {
           />
         </Form.Group>
         </div>
+        <div class="form-check check-wrapper">
+             <input type="checkbox" class="form-check-input check-box" id="exampleCheck1" />
+             <label class="form-check-label" for="exampleCheck1">I agree to the</label>
+             <label class="form-check-label green" for="exampleCheck1">Terms and Conditions</label>
+        </div>
         <div className="buttom-wrapper">
         <Button className="button" block size="sm" type="submit" disabled={!validateForm()}>
         SIGN UP
         </Button>
+        </div>
+        <div class="label-wrapper">
+        <label>Already have an account?</label>
+        <label class="green">log in</label>
         </div>
       </Form>
     </div>

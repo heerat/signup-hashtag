@@ -1,4 +1,38 @@
-.content{
-    padding: 50px 300px;
-    background-color: #00000091;;
+.home {
+  position: absolute;
+  height: fit-content;
+  width: 100%;
+  padding: 0px 130px;
+  background-color: #1d1d1f;
 }
+.container {
+  padding: 30px 350px;
+  margin-top: 25px ;
+  border-radius: 35px;
+  background-color: #2b2b2d;
+}
+.toggle {
+  height: 35px;
+  margin-bottom: 20px;
+}
+.fan-button {
+  width: 50%;
+  height: 100%;
+  border: solid 0px;
+  border-radius: 25px;
+  background-color: #1d1d1f;
+}
+.fan-button:focus {
+  outline: unset;
+}
+.talent-button {
+  width: 50%;
+  height: 100%;
+  border: solid 0px;
+  border-radius: 25px;
+  background-color: green;
+}
+.talent-button:focus {
+    outline: unset;
+  }
+
